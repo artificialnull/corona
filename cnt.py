@@ -15,10 +15,10 @@ for line in open('counties.txt').read().split('\n'):
     lat = float(ls[-2][:-1])
     lon = -float(ls[-1][1:-1])
     c = cases.get(ls[2], 0)
-    for x in range(0, c):
-        print(json.dumps({
-            'id': str(ident) + '-' + str(x),
-            'latitude': lat,
-            'longitude': lon,
-            }) + ',')
+    print(json.dumps({
+        'id': str(ident),
+        'latitude': lat,
+        'longitude': lon,
+        'cases': c
+        }) + ',')
 print(']')
